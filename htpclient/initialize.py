@@ -199,7 +199,7 @@ class Initialize:
             os.mkdir("crackers")
         if not os.path.isdir("files"):
             os.mkdir("files")
-        if not os.path.isdir("hashlists"):
-            os.mkdir("hashlists")
+        if not os.path.isdir("/tmp/hashlists"):
+            os.mkdir("/tmp/hashlists", 0o770)
         if not os.path.isdir("preprocessor"):
             os.mkdir("preprocessor")

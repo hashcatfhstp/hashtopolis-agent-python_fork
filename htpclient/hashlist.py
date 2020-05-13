@@ -26,7 +26,7 @@ class Hashlist:
             sleep(5)
             return False
         else:
-            Download.download(self.config.get_value('url').replace("api/server.php", "") + ans['url'], "hashlists/" + str(hashlist_id), True)
+            Download.download(self.config.get_value('url').replace("api/server.php", "") + ans['url'], "/tmp/hashlists/" + str(hashlist_id), True)
             return True
 
     def load_found(self, hashlist_id, cracker_id):

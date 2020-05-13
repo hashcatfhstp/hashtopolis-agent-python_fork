@@ -46,13 +46,13 @@ def run_health_check():
     logging.info("Starting check ID " + str(check_id))
 
     # write hashes to file
-    hash_file = open("hashlists/health_check.txt", "w")
+    hash_file = open("/tmp/hashlists/health_check.txt", "w")
     hash_file.write("\n".join(ans['hashes']))
     hash_file.close()
 
     # delete old file if necessary
-    if os.path.exists("hashlists/health_check.out"):
-        os.unlink("hashlists/health_check.out")
+    if os.path.exists("/tmp/hashlists/health_check.out"):
+        os.unlink("/tmp/hashlists/health_check.out")
 
     # run task
     cracker = HashcatCracker(ans['crackerBinaryId'], binaryDownload)
@@ -61,8 +61,8 @@ def run_health_check():
     end = int(time.time())
 
     # read results
-    if os.path.exists("hashlists/health_check.out"):
-        founds = file_get_contents("hashlists/health_check.out").replace("\r\n", "\n").split("\n")
+    if os.path.exists("/tmp/hashlists/health_check.out"):
+        founds = file_get_contents("/tmp/hashlists/health_check.out").replace("\r\n", "\n").split("\n")
     else:
         founds = []
     num_gpus = len(states[0].get_temps())
@@ -276,7 +276,7 @@ def de_register():
     else:
         logging.info("Successfully de-registered!")
         # cleanup
-        dirs = ['crackers', 'prince', 'hashlists', 'files']
+        dirs = ['crackers', 'prince', '/tmp/hashlists', 'files']
         files = ['config.json', '7zr.exe', '7zr']
         for file in files:
             if os.path.exists(file):
