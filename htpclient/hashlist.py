@@ -44,5 +44,5 @@ class Hashlist:
             return False
         else:
             logging.info("Saving found hashes to hashcat potfile...")
-            Download.download(self.config.get_value('url').replace("api/server.php", "") + ans['url'], "crackers/" + str(cracker_id) + "/hashcat.potfile", True)
+            Download.download(self.config.get_value('url').replace("api/server.php", "") + ans['url'], "/tmp/hashlists/hashcat.potfile", True)
             return True

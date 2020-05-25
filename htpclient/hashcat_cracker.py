@@ -84,6 +84,7 @@ class HashcatCracker:
         args += " -s " + str(chunk['skip'])
         args += " -l " + str(chunk['length'])
         if 'useBrain' in task and task['useBrain']:  # when using brain we set the according parameters
+            args += " --potfile-path /tmp/hashlists/hashcat.potfile"
             args += " --brain-client --brain-host " + task['brainHost']
             args += " --brain-port " + str(task['brainPort'])
             args += " --brain-password " + task['brainPass']
