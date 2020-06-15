@@ -1,5 +1,8 @@
 import requests
 
+# We can't enable cert verification in this demo setting.
+requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
+
 
 class Session:
     __instance = None
