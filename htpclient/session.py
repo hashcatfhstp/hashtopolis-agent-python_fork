@@ -1,4 +1,5 @@
 import requests
+from urllib3.exceptions import InsecureRequestWarning
 
 # We can't enable cert verification in this demo setting.
 requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
