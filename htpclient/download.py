@@ -19,13 +19,13 @@ class Download:
 
             # Check header
             if not no_header:
-                head = session.head(url, verify="master.cert")
+                head = session.head(url, verify=False)
                 # not sure if we only should allow 200/302, but then it's present for sure
                 if head.status_code != 200 and head.status_code != 302:
                     return False
 
             with open(output, "wb") as file:
-                response = session.get(url, stream=True, verify="master.cert")
+                response = session.get(url, stream=True, verify=False)
                 total_length = response.headers.get('Content-Length')
 
                 if total_length is None:  # no content length header
