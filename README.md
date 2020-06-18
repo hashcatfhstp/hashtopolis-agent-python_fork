@@ -1,8 +1,8 @@
 # Hashtopolis Python Agent
 
-This is a WIP fork of https://github.com/s3inlc/hashtopolis-agent-python
+This is a Hashtopolis-Agent fork, which has been optimized for GDPR requirements and is intended to be used together with the [Hashtopolis-Server fork](https://github.com/hashcatfhstp/hashtopolis_fork). Changes have been made to the storage locations and Unixpermissions.
 
-This agent is used with [Hashtopolis](https://github.com/s3inlc/hashtopolis), read the wiki or create issues there, visit the [Forum](https://hashtopolis.org).
+
 This Hashtopolis agent is only compatible with Hashtopolis versions 0.5.0 and higher.
 
 ## Prerequisites
